@@ -1,5 +1,7 @@
 import 'package:employee_system_prototype/screens/auth/login-screen.dart';
+import 'package:employee_system_prototype/screens/auth/signup-screen.dart';
 import 'package:employee_system_prototype/screens/landing_page/landing-page-screen.dart';
+import 'package:employee_system_prototype/screens/main/main-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,7 +15,7 @@ class AppRouter {
             GoRoute(
               path: "/landing-page",
               name: "landing-page",
-              builder: (context, state){
+              builder: (context, state) {
                 return const LandingPageScreen();
               },
             ),
@@ -24,14 +26,27 @@ class AppRouter {
                 return const LoginScreen();
               },
             ),
-            // GoRoute(path: "/main", name: "main", routes: [
-            //   GoRoute(path: "/home", name: "home", routes: [
-            //     GoRoute(
-            //       path: "/attendance",
-            //       name: "attendance",
-            //     )
-            //   ]),
-            // ]),
+            GoRoute(
+              path: "/signup",
+              name: "signup",
+              builder: (context, state) {
+                return const SignUpScreen();
+              },
+            ),
+            GoRoute(
+                path: "/main",
+                name: "main",
+                builder: (context, state) {
+                  return const MainScreen();
+                },
+                routes: const [
+                  // GoRoute(path: "/home", name: "home", routes: [
+                  //   GoRoute(
+                  //     path: "/attendance",
+                  //     name: "attendance",
+                  //   )
+                  // ]),
+                ]),
             // GoRoute(path: "/request", name: "request"),
             // GoRoute(path: "/account", name: 'account')
           ]);
