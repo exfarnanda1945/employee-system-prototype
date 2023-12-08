@@ -96,7 +96,9 @@ class LandingPageScreen extends StatelessWidget {
                   height: 15,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.pushNamed("signup");
+                  },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size.fromHeight(50),
                     backgroundColor: blueberry,
