@@ -1,5 +1,5 @@
+import 'package:employee_system_prototype/utils/clip/landing-page-top-clip.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
-import 'package:employee_system_prototype/widget/clip/landing-page-top-clip.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
