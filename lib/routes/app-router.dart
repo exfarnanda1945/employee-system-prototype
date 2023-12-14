@@ -1,11 +1,9 @@
 import 'package:employee_system_prototype/screens/auth/login-screen.dart';
 import 'package:employee_system_prototype/screens/auth/signup-screen.dart';
-import 'package:employee_system_prototype/screens/landing_page/landing-page-screen.dart';
+import 'package:employee_system_prototype/screens/landing-page/landing-page-screen.dart';
 import 'package:employee_system_prototype/screens/main/main-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-final _navigatorKey = GlobalKey<NavigatorState>();
 
 class AppRouter {
   static GoRouter getRoutes(String initialRoute) => GoRouter(
@@ -20,8 +18,8 @@ class AppRouter {
               },
             ),
             GoRoute(
-              path: "/sign",
-              name: "sign",
+              path: "/signin",
+              name: "signin",
               builder: (context, state) {
                 return const LoginScreen();
               },
