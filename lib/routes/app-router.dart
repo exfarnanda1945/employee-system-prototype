@@ -2,7 +2,6 @@ import 'package:employee_system_prototype/screens/auth/login-screen.dart';
 import 'package:employee_system_prototype/screens/auth/signup-screen.dart';
 import 'package:employee_system_prototype/screens/landing-page/landing-page-screen.dart';
 import 'package:employee_system_prototype/screens/main/main-screen.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
