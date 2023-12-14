@@ -1,6 +1,6 @@
-import 'package:employee_system_prototype/utils/clip/login-clip.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
-import 'package:employee_system_prototype/widget/login-form.dart';
+import 'package:employee_system_prototype/widget/clip/login-clip.dart';
+import 'package:employee_system_prototype/widget/forms/login-form.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -17,9 +17,12 @@ class LoginScreen extends StatelessWidget {
           ClipPath(
             clipper: LoginClip(),
             child: Container(
-              color: hanBlue,
               height: 300.0,
               width: double.infinity,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('images/laptop.jpg'),
+                      fit: BoxFit.cover)),
             ),
           ),
          const Column(

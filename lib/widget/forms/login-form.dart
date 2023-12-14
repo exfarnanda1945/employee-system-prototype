@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../utils/colors.dart';
+import '../../utils/colors.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
