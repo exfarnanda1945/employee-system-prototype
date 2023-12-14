@@ -9,8 +9,22 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const Padding(
+          padding: EdgeInsets.only(bottom: 20),
+          child: Text(
+            'Sign Up to create your account',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: davyGrey,
+              fontSize: 20,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w600,
+              height: 0,
+            ),
+          ),
+        ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 16),
+          padding: const EdgeInsets.only(bottom: 16,top: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -153,13 +167,12 @@ class SignUpForm extends StatelessWidget {
               height: 0,
             ),
           ),
-
         ),
-         Padding(
-          padding: const EdgeInsets.only(top:15),
+        Padding(
+          padding: const EdgeInsets.only(top: 15),
           child: GestureDetector(
             onTap: () {
-              context.pushNamed("sign");
+              context.pushNamed("signin");
             },
             child: const Text.rich(
               TextSpan(
@@ -192,4 +205,4 @@ class SignUpForm extends StatelessWidget {
       ],
     );
   }
-  }
+}
