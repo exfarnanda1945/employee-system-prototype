@@ -1,5 +1,4 @@
 import 'package:employee_system_prototype/utils/colors.dart';
-import 'package:employee_system_prototype/widget/clip/login-clip.dart';
 import 'package:employee_system_prototype/widget/clip/signup-clip.dart';
 import 'package:employee_system_prototype/widget/forms/signup-form.dart';
 import 'package:flutter/material.dart';
