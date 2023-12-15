@@ -32,7 +32,6 @@ class LandingPageScreen extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
-                          fontFamily: 'Inter',
                           fontWeight: FontWeight.w600,
                           height: 0,
                         ),
@@ -46,7 +45,6 @@ class LandingPageScreen extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 36,
-                              fontFamily: 'Inter',
                               fontWeight: FontWeight.w800,
                               height: 0,
                             ),
@@ -56,7 +54,6 @@ class LandingPageScreen extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 36,
-                              fontFamily: 'Inter',
                               fontWeight: FontWeight.w400,
                               height: 0,
                             ),
@@ -86,7 +83,6 @@ class LandingPageScreen extends StatelessWidget {
                     style: TextStyle(
                       color: blueberry,
                       fontSize: 16,
-                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       height: 0,
                     ),
@@ -111,7 +107,6 @@ class LandingPageScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
-                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       height: 0,
                     ),

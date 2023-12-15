@@ -34,7 +34,6 @@ class LoginScreen extends StatelessWidget {
                  style: TextStyle(
                    color: Colors.white,
                    fontSize: 36,
-                   fontFamily: 'Inter',
                    fontWeight: FontWeight.w700,
                    height: 0,
                  ),
@@ -45,7 +44,6 @@ class LoginScreen extends StatelessWidget {
                style: TextStyle(
                  color: lightGray,
                  fontSize: 20,
-                 fontFamily: 'Inter',
                  fontWeight: FontWeight.w600,
                  height: 0,
                ),

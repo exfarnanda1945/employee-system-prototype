@@ -22,7 +22,6 @@ class LoginForm extends StatelessWidget {
                   style: TextStyle(
                     color: davyGrey,
                     fontSize: 16,
-                    fontFamily: 'Inter',
                     fontWeight: FontWeight.w500,
                     height: 0,
                   ),
@@ -51,7 +50,6 @@ class LoginForm extends StatelessWidget {
                 style: TextStyle(
                   color: davyGrey,
                   fontSize: 16,
-                  fontFamily: 'Inter',
                   fontWeight: FontWeight.w500,
                   height: 0,
                 ),
@@ -84,7 +82,6 @@ class LoginForm extends StatelessWidget {
                   style: TextStyle(
                     color: davyGrey,
                     fontSize: 16,
-                    fontFamily: 'Inter',
                     fontWeight: FontWeight.w400,
                     height: 0,
                   ),
@@ -96,7 +93,6 @@ class LoginForm extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 16,
-                fontFamily: 'Inter',
                 fontWeight: FontWeight.w500,
                 height: 0,
               ),
@@ -118,7 +114,6 @@ class LoginForm extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 16,
-              fontFamily: 'Inter',
               fontWeight: FontWeight.w600,
               height: 0,
             ),
@@ -139,7 +134,6 @@ class LoginForm extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
-                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w300,
                       height: 0,
                     ),
@@ -149,7 +143,6 @@ class LoginForm extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
-                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       height: 0,
                     ),

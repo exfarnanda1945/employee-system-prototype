@@ -36,15 +36,13 @@ class BottomNavigation extends StatelessWidget {
       unselectedLabelStyle: const TextStyle(
         color: davyGrey,
         fontSize: 13,
-        fontFamily: 'Inter',
         fontWeight: FontWeight.w500,
         height: 0,
       ),
       selectedLabelStyle: const TextStyle(
         color: blueberry,
-        fontSize: 14,
-        fontFamily: 'Inter',
-        fontWeight: FontWeight.bold,
+        fontSize: 13,
+        fontWeight: FontWeight.w600,
         height: 0,
       ),
     );
