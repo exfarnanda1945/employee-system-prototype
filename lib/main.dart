@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Employee System',
       theme: ThemeData(
         useMaterial3: true,
+        fontFamily: 'Inter'
       ),
       routerConfig: AppRouter.getRoutes("/main"),
     );
