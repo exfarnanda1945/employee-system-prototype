@@ -8,7 +8,7 @@ class HomeTopClip extends CustomClipper<Path> {
 
     final path = Path();
     path.lineTo(0, h);
-    path.quadraticBezierTo(w*0.3,h,w,20);
+    path.quadraticBezierTo(w*0.3,h,w,10);
     path.lineTo(w, 0);
     path.close();
 
