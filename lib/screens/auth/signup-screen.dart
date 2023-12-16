@@ -1,6 +1,6 @@
 import 'package:employee_system_prototype/utils/clip/login-clip.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
-import 'package:employee_system_prototype/widget/signup-form.dart';
+import 'package:employee_system_prototype/widget/form/signup-form.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -58,16 +58,16 @@ class SignUpScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Container(
                 width: double.infinity,
-                height: (5/7) * MediaQuery.of(context).size.height,
+                height: (5 / 7) * MediaQuery.of(context).size.height,
                 decoration: const BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight:Radius.circular(20) )
-                ),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20))),
                 child: const Padding(
-                  padding: EdgeInsets.only(left: 20,right: 20,top:50),
+                  padding: EdgeInsets.only(left: 20, right: 20, top: 50),
                   child: SignUpForm(),
-                )
-                ,
+                ),
               ),
             ),
           )
