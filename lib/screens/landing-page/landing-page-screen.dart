@@ -1,5 +1,5 @@
+import 'package:employee_system_prototype/widget/clip/landing-page-top-clip.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
-import 'package:employee_system_prototype/utils/clip/landing-page-top-clip.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -32,7 +32,6 @@ class LandingPageScreen extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
-                          fontFamily: 'Inter',
                           fontWeight: FontWeight.w600,
                           height: 0,
                         ),
@@ -46,7 +45,6 @@ class LandingPageScreen extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 36,
-                              fontFamily: 'Inter',
                               fontWeight: FontWeight.w800,
                               height: 0,
                             ),
@@ -56,7 +54,6 @@ class LandingPageScreen extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 36,
-                              fontFamily: 'Inter',
                               fontWeight: FontWeight.w400,
                               height: 0,
                             ),
@@ -75,7 +72,7 @@ class LandingPageScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    context.pushNamed("sign");
+                    context.pushNamed("signin");
                   },
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(50),
@@ -86,7 +83,6 @@ class LandingPageScreen extends StatelessWidget {
                     style: TextStyle(
                       color: blueberry,
                       fontSize: 16,
-                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       height: 0,
                     ),
@@ -111,7 +107,6 @@ class LandingPageScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
-                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       height: 0,
                     ),

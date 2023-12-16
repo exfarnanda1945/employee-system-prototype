@@ -7,8 +7,8 @@ class LoginClip extends CustomClipper<Path> {
     double h = size.height;
 
     final path = Path();
-    path.lineTo(0, h*0.5);
-    path.quadraticBezierTo(w*0.5,h ,w, h*0.5);
+    path.lineTo(0, h*0.7);
+    path.quadraticBezierTo(w*0.5,h+30 ,w, h*0.7);
     path.lineTo(w, 0);
     path.close();
 
