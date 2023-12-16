@@ -1,4 +1,5 @@
 import 'package:employee_system_prototype/model/attendance.dart';
+import 'package:employee_system_prototype/screens/main/home/home-attendance-item.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +80,7 @@ class HomeAttendanceInfo extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                    top: 30, bottom: 15, left: 22, right: 22),
+                    top: 20, bottom: 15, left: 22, right: 22),
                 child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
@@ -109,7 +110,7 @@ class HomeAttendanceInfo extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 20, left: 30, right: 30),
+          padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
           child: Column(
             children: [
               const Row(
@@ -129,62 +130,18 @@ class HomeAttendanceInfo extends StatelessWidget {
                   )
                 ],
               ),
-              Padding(
-                  padding: const EdgeInsets.only(top: 15),
-                  child: Column(
-                    children: [
-                      buildAttendanceItem(),
-                      buildAttendanceItem(),
-                      buildAttendanceItem(),
-                      buildAttendanceItem(),
-                      buildAttendanceItem(),
-                      buildAttendanceItem()
-                    ],
-                  ))
+              ListView.builder(
+                itemCount: attendanceThisWeeks.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  final item = attendanceThisWeeks[index];
+                  return HomeAttendanceItem(item: item);
+                },
+              )
             ],
           ),
         )
       ],
-    );
-  }
-
-  buildAttendanceItem() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 15),
-      child: Column(
-        children: [
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Monday, 11 December 2023 ",
-                style: TextStyle(
-                  color: davyGrey,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  height: 0,
-                ),
-              ),
-              Text(
-                "07:45 - 17:00",
-                style: TextStyle(
-                  color: davyGrey,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  height: 0,
-                ),
-              )
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Container(
-              height: 2,
-              color: lightGray,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
