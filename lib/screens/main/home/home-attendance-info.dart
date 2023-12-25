@@ -2,6 +2,7 @@ import 'package:employee_system_prototype/model/attendance.dart';
 import 'package:employee_system_prototype/screens/main/home/home-attendance-item.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeAttendanceInfo extends StatelessWidget {
   const HomeAttendanceInfo({super.key});
@@ -82,7 +83,9 @@ class HomeAttendanceInfo extends StatelessWidget {
                 padding: const EdgeInsets.only(
                     top: 20, bottom: 15, left: 22, right: 22),
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushNamed("auto-attendance");
+                    },
                     style: ElevatedButton.styleFrom(
                         minimumSize: const Size.fromHeight(50),
                         backgroundColor: blueberry,
