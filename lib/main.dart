@@ -1,5 +1,6 @@
 import 'package:employee_system_prototype/routes/app-router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Inter'
       ),
       routerConfig: AppRouter.getRoutes("/main"),
+      builder: EasyLoading.init(),
     );
   }
 }
