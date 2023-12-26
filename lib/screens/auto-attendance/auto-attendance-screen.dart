@@ -1,7 +1,10 @@
 import 'package:employee_system_prototype/screens/errors/location-disabled-error.dart';
 import 'package:employee_system_prototype/screens/errors/permission-location-error.dart';
+import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:employee_system_prototype/utils/network-device.dart';
+import 'package:employee_system_prototype/widget/clip/auto-attendance-clip.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -28,16 +31,14 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
 
   @override
   Widget build(BuildContext context) {
+    isMapLoading
+        ? EasyLoading.show(status: 'Loading...')
+        : EasyLoading.dismiss();
+
     return Scaffold(body: renderBody());
   }
 
   renderBody() {
-    if (isMapLoading) {
-      return const Center(
-        child: Text("Loading..."),
-      );
-    }
-
     if (isLocPermissionDenied) {
       return PermissionLocationError(
         onRetry: () async {
@@ -56,8 +57,28 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
       );
     }
 
-    return const Center(
-      child: Text("Center"),
+    return Stack(
+      children: [
+        Align(
+          alignment: Alignment.topCenter,
+          child: Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * (2 / 3),
+            color: Colors.red,
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: ClipPath(
+            clipper: AutoAttendanceClip(),
+            child: Container(
+              height: MediaQuery.of(context).size.height * (1 / 3),
+              width: double.infinity,
+              color: hanBlue,
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -117,5 +138,11 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
         isMapLoading = false;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    EasyLoading.dismiss();
   }
 }
