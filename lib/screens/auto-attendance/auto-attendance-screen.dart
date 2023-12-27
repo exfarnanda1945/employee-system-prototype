@@ -3,6 +3,7 @@ import 'package:employee_system_prototype/screens/errors/permission-location-err
 import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:employee_system_prototype/utils/network-device.dart';
 import 'package:employee_system_prototype/widget/clip/auto-attendance-clip.dart';
+import 'package:employee_system_prototype/widget/forms/auto-attendance-form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:geolocator/geolocator.dart';
@@ -61,10 +62,9 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
       children: [
         Align(
           alignment: Alignment.topCenter,
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: MediaQuery.of(context).size.height * (2 / 3),
-            color: Colors.red,
           ),
         ),
         Align(
@@ -75,6 +75,26 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
               height: MediaQuery.of(context).size.height * (1 / 3),
               width: double.infinity,
               color: hanBlue,
+            ),
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * (1 / 2),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(30),
+                    topLeft: Radius.circular(30),
+                  )),
+              child: const Padding(
+                padding: EdgeInsets.all(25),
+                child: AutoAttendanceForm(),
+              ),
             ),
           ),
         ),
