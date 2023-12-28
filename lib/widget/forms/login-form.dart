@@ -103,7 +103,9 @@ class LoginForm extends StatelessWidget {
           height: 20,
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pushNamed("main");
+          },
           style: ElevatedButton.styleFrom(
               minimumSize: const Size.fromHeight(50),
               backgroundColor: blueberry,
