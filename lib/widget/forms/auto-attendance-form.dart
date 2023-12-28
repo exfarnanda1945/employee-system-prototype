@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class AutoAttendanceForm extends StatelessWidget {
   const AutoAttendanceForm({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -96,7 +97,7 @@ class AutoAttendanceForm extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: const EdgeInsets.only(top: 10),
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(

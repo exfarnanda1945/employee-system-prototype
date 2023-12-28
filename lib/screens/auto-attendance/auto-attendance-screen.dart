@@ -2,12 +2,11 @@ import 'package:employee_system_prototype/screens/errors/location-disabled-error
 import 'package:employee_system_prototype/screens/errors/permission-location-error.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:employee_system_prototype/utils/network-device.dart';
-import 'package:employee_system_prototype/widget/clip/auto-attendance-clip.dart';
 import 'package:employee_system_prototype/widget/forms/auto-attendance-form.dart';
+import 'package:employee_system_prototype/widget/forms/maps-auto-attendance-form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -33,11 +32,29 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    isMapLoading
-        ? EasyLoading.show(status: 'Loading...')
-        : EasyLoading.dismiss();
+    if (isMapLoading || currentPosition == null) {
+      EasyLoading.show(status: 'Loading...');
+    } else {
+      EasyLoading.dismiss();
+    }
 
-    return Scaffold(body: renderBody());
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: blueberry,
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+        title: const Text(
+          'Clock In',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            height: 0,
+          ),
+        ),
+      ),
+        body: renderBody());
   }
 
   renderBody() {
@@ -64,29 +81,23 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
         Align(
           alignment: Alignment.topCenter,
           child: SizedBox(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * (5/7),
-            child: GoogleMap(
-              mapType: MapType.normal,
-              initialCameraPosition: const CameraPosition(
-                  target: LatLng(-6.267309535408621, 106.82552887691514), zoom: 17),
-              onMapCreated: (GoogleMapController controller) {},
-              myLocationButtonEnabled: true,
-              myLocationEnabled: true,
-              zoomGesturesEnabled: false,
-              scrollGesturesEnabled: false,
-            )
-          ),
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * (5 / 7),
+              child: currentPosition != null
+                  ? MapsAutoAttendanceForm(position: currentPosition!)
+                  : null),
         ),
         Align(
           alignment: Alignment.bottomCenter,
-          child: ClipPath(
-            clipper: AutoAttendanceClip(),
-            child: Container(
-              height: MediaQuery.of(context).size.height * (2/7),
-              width: double.infinity,
-              color: hanBlue,
-            ),
+          child: Container(
+            height: MediaQuery.of(context).size.height * (2 / 7),
+            width: double.infinity,
+            decoration: const BoxDecoration(
+                color: blueberry,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  topLeft: Radius.circular(20),
+                )),
           ),
         ),
         Align(
@@ -95,7 +106,7 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height * (3/7),
+              height: MediaQuery.of(context).size.height * (3 / 7),
               decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -103,7 +114,7 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
                     topLeft: Radius.circular(30),
                   )),
               child: const Padding(
-                padding: EdgeInsets.only(left: 30,right: 30,top: 15),
+                padding: EdgeInsets.only(left: 30, right: 30, top: 15),
                 child: AutoAttendanceForm(),
               ),
             ),
