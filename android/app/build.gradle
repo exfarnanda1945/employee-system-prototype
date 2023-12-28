@@ -22,7 +22,7 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-def gmapsKey = localProperties.getProperty('flutter.GMAPS_KEY')
+def gmapsKey = localProperties.getProperty('GMAPS_KEY')
 if (gmapsKey == null) {
     gmapsKey = ""
 }
