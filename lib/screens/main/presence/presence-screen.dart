@@ -1,3 +1,4 @@
+import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class PresenceScreen extends StatelessWidget {
@@ -5,8 +6,14 @@ class PresenceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: blueberry,
+        foregroundColor: Colors.white,
+        child: const Icon(Icons.add),
+      ),
+      body: const Center(
         child: Text("Presence"),
       ),
     );

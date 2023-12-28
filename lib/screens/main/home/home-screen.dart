@@ -1,8 +1,9 @@
-import 'package:employee_system_prototype/screens/main/home/home-attendance-info.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:employee_system_prototype/widget/clip/home-middle-clip.dart';
 import 'package:employee_system_prototype/widget/clip/home-top-clip.dart';
 import 'package:flutter/material.dart';
+
+import 'home-presence-info.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -40,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20))),
-                child: const HomeAttendanceInfo(),
+                child: const HomePresenceInfo(),
               ),
             ),
           ),

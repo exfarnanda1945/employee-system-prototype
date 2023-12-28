@@ -1,8 +1,8 @@
 import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class AutoAttendanceForm extends StatelessWidget {
-  const AutoAttendanceForm({super.key});
+class AutoPresenceForm extends StatelessWidget {
+  const AutoPresenceForm({super.key});
 
 
   @override

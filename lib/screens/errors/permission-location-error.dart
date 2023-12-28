@@ -14,7 +14,7 @@ class PermissionLocationError extends StatelessWidget {
         icon: Icons.location_off,
         title: "Please Enable Location Permission",
         description:
-            "You need to enable location permission to take attendance",
+            "You need to enable location permission to take Presence",
         onRetry: onRetry,
         onDismiss: onDismiss,
         retryTitle: "Retry",

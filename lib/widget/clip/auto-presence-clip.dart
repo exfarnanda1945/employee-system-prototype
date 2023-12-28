@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AutoAttendanceClip extends CustomClipper<Path> {
+class AutoPresenceClip extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     double w = size.width;

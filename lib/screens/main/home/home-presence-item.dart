@@ -1,11 +1,11 @@
-import 'package:employee_system_prototype/model/attendance.dart';
+import 'package:employee_system_prototype/model/presence.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class HomeAttendanceItem extends StatelessWidget {
-  final Attendance item;
+class HomePresenceItem extends StatelessWidget {
+  final Presence item;
 
-  const HomeAttendanceItem({super.key, required this.item});
+  const HomePresenceItem({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {

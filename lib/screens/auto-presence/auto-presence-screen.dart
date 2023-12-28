@@ -2,22 +2,22 @@ import 'package:employee_system_prototype/screens/errors/location-disabled-error
 import 'package:employee_system_prototype/screens/errors/permission-location-error.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:employee_system_prototype/utils/network-device.dart';
-import 'package:employee_system_prototype/widget/forms/auto-attendance-form.dart';
-import 'package:employee_system_prototype/widget/forms/maps-auto-attendance-form.dart';
+import 'package:employee_system_prototype/widget/forms/auto-presence-form.dart';
+import 'package:employee_system_prototype/widget/forms/maps-auto-presence-form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class AutoAttendanceScreen extends StatefulWidget {
-  const AutoAttendanceScreen({super.key});
+class AutoPresenceScreen extends StatefulWidget {
+  const AutoPresenceScreen({super.key});
 
   @override
-  State<AutoAttendanceScreen> createState() => _AutoAttendanceScreenState();
+  State<AutoPresenceScreen> createState() => _AutoPresenceScreenState();
 }
 
-class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
+class _AutoPresenceScreenState extends State<AutoPresenceScreen> {
   bool isMapLoading = true;
   bool isLocPermissionDenied = false;
   bool isLocationDisable = false;
@@ -84,7 +84,7 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
               width: double.infinity,
               height: MediaQuery.of(context).size.height * (5 / 7),
               child: currentPosition != null
-                  ? MapsAutoAttendanceForm(position: currentPosition!)
+                  ? MapsAutoPresenceForm(position: currentPosition!)
                   : null),
         ),
         Align(
@@ -115,7 +115,7 @@ class _AutoAttendanceScreenState extends State<AutoAttendanceScreen> {
                   )),
               child: const Padding(
                 padding: EdgeInsets.only(left: 30, right: 30, top: 15),
-                child: AutoAttendanceForm(),
+                child: AutoPresenceForm(),
               ),
             ),
           ),

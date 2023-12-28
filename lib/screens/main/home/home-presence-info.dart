@@ -1,11 +1,12 @@
-import 'package:employee_system_prototype/model/attendance.dart';
-import 'package:employee_system_prototype/screens/main/home/home-attendance-item.dart';
+import 'package:employee_system_prototype/model/presence.dart';
 import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class HomeAttendanceInfo extends StatelessWidget {
-  const HomeAttendanceInfo({super.key});
+import 'home-presence-item.dart';
+
+class HomePresenceInfo extends StatelessWidget {
+  const HomePresenceInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class HomeAttendanceInfo extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Live Attendance',
+                'Live Presence',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -84,7 +85,7 @@ class HomeAttendanceInfo extends StatelessWidget {
                     top: 20, bottom: 15, left: 22, right: 22),
                 child: ElevatedButton(
                     onPressed: () {
-                      context.pushNamed("auto-attendance");
+                      context.pushNamed("auto-presence");
                     },
                     style: ElevatedButton.styleFrom(
                         minimumSize: const Size.fromHeight(50),
@@ -123,7 +124,7 @@ class HomeAttendanceInfo extends StatelessWidget {
                     color: Colors.black,
                   ),
                   Text(
-                    'Attendance History',
+                    'Presence History',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
@@ -134,11 +135,11 @@ class HomeAttendanceInfo extends StatelessWidget {
                 ],
               ),
               ListView.builder(
-                itemCount: attendanceThisWeeks.length,
+                itemCount: presenceThisWeeks.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  final item = attendanceThisWeeks[index];
-                  return HomeAttendanceItem(item: item);
+                  final item = presenceThisWeeks[index];
+                  return HomePresenceItem(item: item);
                 },
               )
             ],

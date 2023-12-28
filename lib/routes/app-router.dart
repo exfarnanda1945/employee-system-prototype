@@ -1,6 +1,6 @@
 import 'package:employee_system_prototype/screens/auth/login-screen.dart';
 import 'package:employee_system_prototype/screens/auth/signup-screen.dart';
-import 'package:employee_system_prototype/screens/auto-attendance/auto-attendance-screen.dart';
+import 'package:employee_system_prototype/screens/auto-presence/auto-presence-screen.dart';
 import 'package:employee_system_prototype/screens/landing-page/landing-page-screen.dart';
 import 'package:employee_system_prototype/screens/main/main-screen.dart';
 import 'package:go_router/go_router.dart';
@@ -39,12 +39,19 @@ class AppRouter {
                 },
                 routes: [
                   GoRoute(
-                    path: "auto-attendance",
-                    name: "auto-attendance",
+                    path: "auto-presence",
+                    name: "auto-presence",
                     builder: (context, state) {
-                      return const AutoAttendanceScreen();
+                      return const AutoPresenceScreen();
                     },
                   ),
+                  // GoRoute(
+                  //   path: "manual-presence",
+                  //   name: "manual-presence",
+                  //   builder: (context, state) {
+                  //     return const AutoPresenceScreen();
+                  //   },
+                  // ),
                 ]),
             // GoRoute(path: "/request", name: "request"),
             // GoRoute(path: "/account", name: 'account')

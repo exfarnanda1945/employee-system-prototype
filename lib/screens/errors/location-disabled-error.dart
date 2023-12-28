@@ -14,7 +14,7 @@ class LocationDisabledError extends StatelessWidget {
     return BaseErrorScreen(
         icon: Icons.location_off,
         title: "Please Enable Your Location",
-        description: "You need to enable location to take attendance",
+        description: "You need to enable location to take presence",
         onRetry: onRetry,
         onDismiss: onDismiss,
         retryTitle: "Retry",
