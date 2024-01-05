@@ -14,10 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Employee System',
-      theme: ThemeData(
-        useMaterial3: true,
-        fontFamily: 'Inter'
-      ),
+      theme: ThemeData(useMaterial3: true, fontFamily: 'Inter'),
       routerConfig: AppRouter.getRoutes("/main"),
       builder: EasyLoading.init(),
     );
