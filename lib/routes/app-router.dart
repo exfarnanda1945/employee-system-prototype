@@ -38,7 +38,5 @@ class AppRouter {
                   return const MainScreen();
                 },
                 routes: mainRouter),
-            // GoRoute(path: "/request", name: "request"),
-            // GoRoute(path: "/account", name: 'account')
           ]);
 }

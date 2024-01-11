@@ -1,6 +1,7 @@
 import 'package:employee_system_prototype/screens/auto-presence/auto-presence-screen.dart';
 import 'package:employee_system_prototype/screens/main/approval/approval-screen.dart';
 import 'package:employee_system_prototype/screens/manual-presence/manual-presence-screen.dart';
+import 'package:employee_system_prototype/screens/sick/sick-screen.dart';
 import 'package:go_router/go_router.dart';
 
 final mainRouter = [
@@ -29,7 +30,7 @@ final mainRouter = [
           path: "sick",
           name: "sick",
           builder: (context, state) {
-            return const ManualPresence();
+            return const SickScreen();
           },
         ),
         GoRoute(
