@@ -81,18 +81,10 @@ class SickScreen extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            const Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    ApprovalItemCard(),
-                    ApprovalItemCard(),
-                    ApprovalItemCard(),
-                    ApprovalItemCard(),
-                    ApprovalItemCard(),
-                    ApprovalItemCard(),
-                  ],
-                ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 10,
+                itemBuilder: (context, index) => const ApprovalItemCard(),
               ),
             )
           ],

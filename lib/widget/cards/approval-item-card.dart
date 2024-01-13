@@ -13,6 +13,7 @@ class ApprovalItemCard extends StatelessWidget {
         elevation: 2,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
+        surfaceTintColor: Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           child: Column(
