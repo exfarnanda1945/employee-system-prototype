@@ -1,6 +1,7 @@
 import 'package:employee_system_prototype/screens/auto-presence/auto-presence-screen.dart';
 import 'package:employee_system_prototype/screens/main/approval/approval-screen.dart';
 import 'package:employee_system_prototype/screens/manual-presence/manual-presence-screen.dart';
+import 'package:employee_system_prototype/screens/sick/add-edit-sick-screen.dart';
 import 'package:employee_system_prototype/screens/sick/sick-screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -27,12 +28,20 @@ final mainRouter = [
       },
       routes: [
         GoRoute(
-          path: "sick",
-          name: "sick",
-          builder: (context, state) {
-            return const SickScreen();
-          },
-        ),
+            path: "sick",
+            name: "sick",
+            builder: (context, state) {
+              return const SickScreen();
+            },
+            routes: [
+              GoRoute(
+                path: "add-edit",
+                name: "sick-add-edit",
+                builder: (context, state) {
+                  return const AddEditSickScreen();
+                },
+              )
+            ]),
         GoRoute(
           path: "out-of-office",
           name: "out-off-office",
