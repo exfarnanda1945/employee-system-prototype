@@ -3,6 +3,7 @@ import 'package:employee_system_prototype/screens/auth/login-screen.dart';
 import 'package:employee_system_prototype/screens/auth/signup-screen.dart';
 import 'package:employee_system_prototype/screens/landing-page/landing-page-screen.dart';
 import 'package:employee_system_prototype/screens/main/main-screen.dart';
+import 'package:employee_system_prototype/screens/test.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
@@ -38,5 +39,12 @@ class AppRouter {
                   return const MainScreen();
                 },
                 routes: mainRouter),
+            GoRoute(
+              path: "/test",
+              name: "test",
+              builder: (context, state) {
+                return const TestScreen();
+              },
+            ),
           ]);
 }
