@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Employee System',
       theme: ThemeData(useMaterial3: true, fontFamily: 'Inter'),
-      routerConfig: AppRouter.getRoutes("/main/approval/sick"),
+      routerConfig: AppRouter.getRoutes("/main/approval/sick/add-edit"),
+      // routerConfig: AppRouter.getRoutes("/test"),
       builder: EasyLoading.init(),
     );
   }
