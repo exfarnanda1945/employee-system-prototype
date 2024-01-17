@@ -2,6 +2,7 @@ import 'package:employee_system_prototype/utils/colors.dart';
 import 'package:employee_system_prototype/widget/cards/approval-counter-card.dart';
 import 'package:employee_system_prototype/widget/cards/approval-item-card.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
 class SickScreen extends StatelessWidget {
@@ -14,8 +15,9 @@ class SickScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "Sick",
-          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
         ),
+        backgroundColor: blueberry,
+        foregroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -36,16 +38,21 @@ class SickScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Container(
-                        width: 30,
-                        height: 30,
-                        decoration: BoxDecoration(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(10)),
-                            border: Border.all(color: blueberry, width: 2)),
-                        child: const Icon(
-                          Icons.add,
-                          color: blueberry,
+                      GestureDetector(
+                        onTap: () {
+                          context.pushNamed("sick-add-edit");
+                        },
+                        child: Container(
+                          width: 30,
+                          height: 30,
+                          decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(10)),
+                              border: Border.all(color: blueberry, width: 2)),
+                          child: const Icon(
+                            Icons.add,
+                            color: blueberry,
+                          ),
                         ),
                       ),
                       const SizedBox(
