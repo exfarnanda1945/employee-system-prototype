@@ -1,4 +1,5 @@
 import 'package:employee_system_prototype/utils/colors.dart';
+import 'package:employee_system_prototype/widget/container/textformfield-container.dart';
 import 'package:employee_system_prototype/widget/picker/datepicker.dart';
 import 'package:employee_system_prototype/widget/picker/timepicker.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ class _ManualPresenceFormState extends State<ManualPresenceForm> {
       child: Column(
         children: [
           DatePicker(
+            title: "Choose",
             context: context,
             selectedDate: selectedDate,
             onDateChange: (value) {
@@ -28,6 +30,9 @@ class _ManualPresenceFormState extends State<ManualPresenceForm> {
                 selectedDate = value;
               });
             },
+          ),
+          const SizedBox(
+            height: 16,
           ),
           TimePicker(
             time: timeEnter,
@@ -40,6 +45,9 @@ class _ManualPresenceFormState extends State<ManualPresenceForm> {
               });
             },
           ),
+          const SizedBox(
+            height: 16,
+          ),
           TimePicker(
             time: timeEnter,
             title: "Exit Time",
@@ -47,47 +55,33 @@ class _ManualPresenceFormState extends State<ManualPresenceForm> {
             prefixIcon: Icons.logout,
             onTimeChange: (value) {},
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Alasan',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        height: 0,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    TextFormField(
-                      maxLines: 5,
-                      decoration: InputDecoration(
-                        isDense: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
+          const SizedBox(
+            height: 16,
           ),
+          TextFormFieldContainer(
+              titleText: const Text(
+                'Alasan',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              textFormField: TextFormField(
+                maxLines: 5,
+                decoration: InputDecoration(
+                  isDense: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              )),
           const SizedBox(
             height: 30,
           ),
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-                minimumSize: const Size.fromHeight(50),
+                minimumSize: const Size.fromHeight(40),
                 backgroundColor: blueberry,
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(5)))),
